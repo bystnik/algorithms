@@ -1,4 +1,4 @@
-package algo;
+package ru.bystnik;
 
 public class QuickSort {
 
