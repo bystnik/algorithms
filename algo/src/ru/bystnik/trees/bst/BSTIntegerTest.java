@@ -17,14 +17,21 @@ public class BSTIntegerTest {
 			}
 		};
 		BST<Integer> bst = new BST<Integer>(comparator);
+		bst.insert(6);
+		bst.insert(2);
+		bst.insert(8);
+		bst.insert(7);
 		bst.insert(10);
+		bst.insert(11);
+		bst.insert(12);
+		bst.insert(2);
+		bst.insert(1);
 		bst.insert(3);
 		bst.insert(4);
-		bst.insert(6);
-		bst.insert(12);
-		bst.insert(32);
-		bst.insert(43);
-		bst.insert(100);
+		bst.insert(5);
+		
+		
+		bst.printOutBST();
 
 	}
 

@@ -1,6 +1,8 @@
 package ru.bystnik.trees.bst;
 
 import java.util.Comparator;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class BST<T> {
 
@@ -44,6 +46,36 @@ public class BST<T> {
 		} else {
 			node.setValue(value);
 			return;
+		}
+	}
+
+	public Node<T> getRoot() {
+		return root;
+	}
+
+	public void printOutBST() {
+		Queue<Node<T>> queue = new LinkedList<Node<T>>();
+		queue.add(root);
+		queue.add(null);
+		while (!queue.isEmpty()) {
+			Node<T> curNode = queue.poll();
+			if (curNode == null) {
+				System.out.println("");
+				if (queue.isEmpty())
+					break;
+				queue.add(null);
+				continue;
+			}
+
+			System.out.print(curNode.getValue() + " ");
+
+			Node<T> left = curNode.getLeft();
+			Node<T> right = curNode.getRight();
+
+			if (left != null)
+				queue.add(left);
+			if (right != null)
+				queue.add(right);
 		}
 	}
 
